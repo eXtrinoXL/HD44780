@@ -104,5 +104,7 @@ void LcdGoto(unsigned char x, unsigned char y);
 void LcdClear(void);
 void LcdInit(void);
 void LcdDec(uint32_t liczba);
+uint8_t LcdDecComma(int32_t liczba, uint8_t po_przecinku);
+void LcdBin(uint8_t liczba);
 
 #endif /* HD44780_H_ */

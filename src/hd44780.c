@@ -158,6 +158,75 @@ void LcdDec(uint32_t liczba)
     }
 }
 
+uint8_t LcdDecComma(int32_t liczba, uint8_t po_przecinku)
+{
+    if (liczba == 0)
+    {
+        LcdData('0');
+        if (po_przecinku != 0)
+            LcdData(',');
+        while (po_przecinku)
+        {
+            LcdData('0');
+            po_przecinku--;
+        }
+        return 0;
+    }
+
+    uint8_t cyfra[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    int8_t i = 0;
+
+    if (liczba < 0)
+    {
+        LcdData('-');
+        liczba = -liczba;
+    }
+
+    while (liczba)
+    {
+        cyfra[i] = (uint8_t)(liczba % 10);
+        liczba = liczba / 10;
+        ++i;
+    }
+
+    if (i > po_przecinku)
+        --i;
+    else
+        i = po_przecinku;
+
+    for (; i >= 0; --i)
+    {
+        if (i == po_przecinku - 1)
+            LcdData(',');
+        LcdData(cyfra[i] + 48);
+    }
+
+    return 0;
+}
+
+void LcdBin(uint8_t liczba)
+{
+    if (liczba == 0)
+    {
+        Lcd("00000000");
+        return;
+    }
+
+    uint8_t cyfra[8];
+    int8_t i;
+
+    for (i = 7; i >= 0; --i)
+    {
+        cyfra[i] = liczba % 2;
+        liczba = liczba / 2;
+    }
+
+    for (i = 0; i < 8; ++i)
+    {
+        LcdData(cyfra[i] + 48);
+    }
+}
+
 //-------------------------------------------------------------------------------------------------
 //
 // Koniec pliku HD44780.c
