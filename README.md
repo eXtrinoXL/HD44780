@@ -1,7 +1,15 @@
-# eXtrinoXL-HD44780
-Biblioteka obsługująca wyświetlacz alfanumeryczny ze sterownikiem HD44780. Sterowanie odbywa się w trybie 4-bitowym, bez odczytu flagi zajętości z dowolnym przypisaniem sygnałów sterujących.
+# eXtrinoXL HD44780
+Biblioteka obsługująca wyświetlacz alfanumeryczny ze sterownikiem **HD44780**. Sterowanie odbywa się w trybie 4-bitowym, bez odczytu flagi zajętości z dowolnym przypisaniem sygnałów sterujących.
 
-Biblioteka przygotowana jest do obsługi mikrokontrolera Atmel AVR XMEGA128A3U znajdującego się na płytce eXtrino XL FULL wyprodukowanej przez Leon Instruments.
+Przygotowana jest do obsługi mikrokontrolera **Atmel AVR XMEGA128A3U** znajdującego się na płytce **eXtrino XL FULL** wyprodukowanej przez Leon Instruments.
+
+## Platformio IO
+
+Bibliotekę można użyć bezpośrednio w projektach utworzonych za pomocą **Platformio IO**. Wystarczy sklonować repozytorium do katalogu **lib/** a następnie dołączyć ją do kodu:
+
+```
+#include <hd44780.h>
+```
 
 ## Źródła
 * [Kurs na stronie Leon Instruments](https://extronic.pl/content/48-kurs-xmega-wyswietlacz-lcd)
