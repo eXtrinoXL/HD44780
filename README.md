@@ -1,3 +1,10 @@
+# MOVED TO GITLAB
+
+<https://gitlab.com/extrinoxl>
+
+<https://gitlab.com/extrinoxl/lib/hd44780>
+
+
 # eXtrinoXL HD44780
 Biblioteka obsługująca wyświetlacz alfanumeryczny ze sterownikiem **HD44780**. Sterowanie odbywa się w trybie 4-bitowym, bez odczytu flagi zajętości z dowolnym przypisaniem sygnałów sterujących.
 
